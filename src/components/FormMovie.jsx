@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Error from "./Error";
+import Success from "./Success";
 import { useParams, useNavigate } from "react-router-dom";
 
 const FormMovie = ({ handleUpdate }) => {
@@ -10,30 +11,10 @@ const FormMovie = ({ handleUpdate }) => {
   const [descripcion, setDescripcion] = useState("");
 
   const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const { id } = useParams();
   const navigate = useNavigate();
-
-  //LocalStorage
-
-  /* const formData = { titulo, genero, director, anio, descripcion };
-
-  //Guardo los datos en LocalStorage
-  useEffect(() => {
-    localStorage.setItem("formData", JSON.stringify(formData));
-  }, [formData]);
-
-  useEffect(() => {
-    const storedData = localStorage.getItem("formData");
-    if (storedData) {
-      const parsedData = JSON.parse(storedData);
-      setTitulo(parsedData?.titulo);
-      setGenero(parsedData?.genero);
-      setDirector(parsedData?.director);
-      setAnio(parsedData?.anio);
-      setDescripcion(parsedData?.descripcion);
-    }
-  }, []); */
 
   //Crear película en la API
   const postMovie = async () => {
@@ -104,8 +85,10 @@ const FormMovie = ({ handleUpdate }) => {
     setError(false);
 
     if (!id) {
-      // Llama a la función para hacer la petición POST
       postMovie();
+
+      setSuccess(true);
+
       //Reiniciar el Formulario
       setTitulo("");
       setGenero("");
@@ -113,10 +96,19 @@ const FormMovie = ({ handleUpdate }) => {
       setAnio("");
       setDescripcion("");
 
-      navigate("/");
+      setTimeout(() => {
+        setSuccess(false);
+        navigate("/");
+      }, 1000);
     } else {
       putMovie();
-      navigate("/");
+
+      setSuccess(true);
+
+      setTimeout(() => {
+        setSuccess(false);
+        navigate("/");
+      }, 1000);
     }
   };
 
@@ -151,6 +143,7 @@ const FormMovie = ({ handleUpdate }) => {
         </div>
 
         {error && <Error>Todos los campos son obligatorios</Error>}
+        {success && <Success>Operación exitosa!!!</Success>}
 
         <div className="mb-3">
           <label htmlFor="titulo" className="form-label">

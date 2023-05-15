@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { useState } from "react";
 
 const Card = ({
   titulo,
@@ -11,6 +12,8 @@ const Card = ({
   favorita,
   handleUpdate,
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   const putMovie = async () => {
     const updatedMovie = {
       favorita: !favorita,
@@ -56,8 +59,24 @@ const Card = ({
     }
   };
 
+  const handleMouseOver = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const zIndex = isHovered ? "10" : "1";
+  const transition = "z-index 0.2s ease-in-out";
+
   return (
-    <div className="card mb-4 container-fluid card-shadow border-0 bg-transparent">
+    <div
+      className="card mb-4 container-fluid card-shadow border-0 bg-transparent"
+      onMouseOver={handleMouseOver}
+      onMouseLeave={handleMouseLeave}
+      style={{ zIndex, transition }}
+    >
       <div className="position-relative p-1">
         {/* <img src="..." className="card-img-top w-100 h-100" alt="... " /> */}
         <button
@@ -67,16 +86,17 @@ const Card = ({
           {!favorita ? <AiOutlineHeart /> : <AiFillHeart color="red" />}
         </button>
       </div>
-      <div className="card-body">
+      <div className="card-body p-0" style={{ overflow: "hidden" }}>
         <h5 className="card-title text-center">{titulo}</h5>
-        <div className="d-md-block card-text mb-2">
-          <p className="card-text">{descripcion}</p>
-        </div>
         <ul className="list-group list-group-flush">
           <li className="list-group-item">Director: {director}</li>
           <li className="list-group-item">Género: {genero}</li>
           <li className="list-group-item">Año: {anio}</li>
+          <li className="list-group-item"></li>
         </ul>
+        <div className="d-md-block card-text mb-2 px-1">
+          <p className="card-text">{descripcion}</p>
+        </div>
       </div>
       <div className="card-body d-flex align-items-end">
         <div>

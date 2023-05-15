@@ -18,10 +18,6 @@ function App() {
     getLS();
   });
 
-  /* useEffect(() => {
-    localStorage.setItem("movies", JSON.stringify(movies));
-  }, [movies]);
- */
   /* Cargar todas las peliculas desde la API al cargar la APP */
   useEffect(() => {
     const consultarAPI = async () => {
@@ -62,7 +58,6 @@ function App() {
   //Filtrar por Favoritos
   const filterFavorites = () => {
     const favorites = copy.filter((m) => m.favorita === true);
-    console.log("Favoritos");
     setMovies(favorites);
   };
 

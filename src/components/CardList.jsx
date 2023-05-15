@@ -1,18 +1,15 @@
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import { useState } from "react";
+import { FiHeart } from "react-icons/fi";
 
 const CardList = ({ movies, filterFavorites, handleUpdate }) => {
   console.log(movies);
 
   const [page, setPage] = useState(1); // Estado de la página actual
-
   const moviesPerPage = 6; // Películas por página
-
   const start = (page - 1) * moviesPerPage; // Índice de inicio
-
   const end = start + moviesPerPage; // Índice de fin
-
   const displayedMovies = movies.slice(start, end); // Películas que se van a mostrar en la página actual
 
   return (
@@ -34,6 +31,7 @@ const CardList = ({ movies, filterFavorites, handleUpdate }) => {
             className="btn btn-outline-danger"
             onClick={() => filterFavorites()}
           >
+            <FiHeart size={20} className="me-2" />
             Favoritos
           </button>
         </div>

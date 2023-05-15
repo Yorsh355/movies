@@ -1,4 +1,3 @@
-//import { useEffect, useState } from "react";
 import CardList from "./CardList";
 
 const Home = ({ movies, filterFavorites, handleUpdate }) => {

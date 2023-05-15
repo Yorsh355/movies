@@ -8,8 +8,9 @@
 }
 
 .card-text {
-  height: 6rem; /* Cambia este valor según tu preferencia */
+  height: 5rem; /* Cambia este valor según tu preferencia */
   overflow-y: auto;
+  background-color: #f6f3f2;
 }
 
 .bgCardList{
@@ -18,5 +19,11 @@
 
 .bgNavBar{
   background-color: #837971;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+  z-index: 1;
 }
 
