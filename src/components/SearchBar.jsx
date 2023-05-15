@@ -29,7 +29,7 @@ const SearchBar = ({ filterYear, filterDirector, filterGenere }) => {
 
   return (
     /* Estilos navbar */
-    <div className="container-fluid d-flex flex-row gap-2">
+    <div className="container-fluid d-flex flex-md-row flex-column gap-2">
       {/* Botón de Inicio */}
       <div className="d-flex align-items-center">
         <a href="/" className="btn btn-outline-success">
