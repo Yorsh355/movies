@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Películas App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Una aplicación web creada con React que permite al usuario visualizar, agregar, actualizar y eliminar películas de una base de datos. La aplicación también permite filtrar las películas por año, director, género y favoritos. Además, utiliza diferentes tipos de almacenamiento, incluyendo el almacenamiento local.
 
-## Available Scripts
+## Instalación
 
-In the project directory, you can run:
+1. Clona este repositorio en tu computadora:
 
-### `npm start`
+```
+git clone https://github.com/Yorsh355/movies.git
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Navega al directorio del proyecto:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+cd app_movies
+```
 
-### `npm test`
+3. Instala las dependencias del proyecto con npm:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm install
+```
 
-### `npm run build`
+## Uso
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Inicia la aplicación:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Abre tu navegador y ve a la dirección `http://localhost:3000` para visualizar la aplicación.
 
-### `npm run eject`
+3. Utiliza la aplicación para visualizar, agregar, actualizar y eliminar películas de la base de datos. También puedes utilizar los filtros por año, director, género y favoritos para encontrar películas específicas.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Estructura del proyecto
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+El proyecto está estructurado en las siguientes carpetas:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `src`: Contiene todo el código fuente de la aplicación.
+  - `components`: Contiene los componentes de React que forman la interfaz de usuario de la aplicación.
+  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Dependencias
 
-## Learn More
+El proyecto utiliza las siguientes dependencias:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `react`: Biblioteca de JavaScript utilizada para construir la interfaz de usuario.
+- `react-router-dom`: Biblioteca de JavaScript utilizada para manejar el enrutamiento de la aplicación.
+- `bootstrap`: Biblioteca de CSS y JavaScript utilizada para dar estilo a la aplicación.
+- `react-icons`: Biblioteca de iconos utilizada para agregar iconos a la aplicación.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contribuir
 
-### Code Splitting
+Si deseas contribuir al proyecto, por favor sigue estos pasos:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Haz un fork del repositorio.
 
-### Analyzing the Bundle Size
+2. Crea una rama con tus cambios:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+git checkout -b feature/nombre-de-la-funcionalidad
+```
 
-### Making a Progressive Web App
+3. Realiza los cambios necesarios y haz commits:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+git add .
+git commit -m "Descripción de los cambios"
+```
 
-### Advanced Configuration
+4. Empuja los cambios a tu fork:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+git push origin feature/nombre-de-la-funcionalidad
+```
 
-### Deployment
+5. Abre un Pull Request en el repositorio original.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
