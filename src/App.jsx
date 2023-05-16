@@ -53,7 +53,15 @@ function App() {
   /* Filtrar por director */
   const filterDirector = (d) => {
     const director = copy.filter(
-      (m) => m.director.toLowerCase() === d.toLowerCase()
+      (m) =>
+        m.director
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "") ===
+        d
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
     );
     setMovies(director);
   };
@@ -61,7 +69,15 @@ function App() {
   /* Filtrar por género */
   const filterGenere = (g) => {
     const genere = copy.filter(
-      (m) => m.genero.toLowerCase() === g.toLowerCase()
+      (m) =>
+        m.genero
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "") ===
+        g
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
     );
     setMovies(genere);
   };
