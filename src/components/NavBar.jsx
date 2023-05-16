@@ -1,5 +1,5 @@
 import SearchBar from "./SearchBar";
-import SearchCombine from "./SearshCombine";
+import SearchCombine from "./SearchCombine";
 
 const NavBar = ({ filterYear, filterDirector, filterGenere, handleSearch }) => {
   return (
