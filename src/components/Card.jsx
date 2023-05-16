@@ -41,7 +41,6 @@ const Card = ({
       handleUpdate();
     } catch (error) {
       console.error(error);
-      // Muestra un mensaje de error al usuario
     }
   };
 
@@ -55,7 +54,6 @@ const Card = ({
       handleUpdate();
     } catch (error) {
       console.error(error);
-      // Muestra un mensaje de error al usuario
     }
   };
 

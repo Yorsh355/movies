@@ -10,13 +10,23 @@ function App() {
   const [copy, setCopy] = useState([]);
   const [update, setUpdate] = useState(false);
 
+  /* Leer los datos del localStorage al cargar la aplicación */
   useEffect(() => {
     const getLS = () => {
       const moviesLS = JSON.parse(localStorage.getItem("movies")) ?? [];
-      console.log(moviesLS);
+      setMovies(moviesLS);
+      setCopy(moviesLS);
     };
     getLS();
-  });
+  }, []);
+
+  /* Guardar los datos en el localStorage cada vez que se actualiza el estado de películas */
+  useEffect(() => {
+    const saveToLS = () => {
+      localStorage.setItem("movies", JSON.stringify(movies));
+    };
+    saveToLS();
+  }, [movies]);
 
   /* Cargar todas las peliculas desde la API al cargar la APP */
   useEffect(() => {
@@ -40,7 +50,7 @@ function App() {
     setMovies(year);
   };
 
-  /* Filtrar por año */
+  /* Filtrar por director */
   const filterDirector = (d) => {
     const director = copy.filter(
       (m) => m.director.toLowerCase() === d.toLowerCase()
@@ -48,6 +58,7 @@ function App() {
     setMovies(director);
   };
 
+  /* Filtrar por género */
   const filterGenere = (g) => {
     const genere = copy.filter(
       (m) => m.genero.toLowerCase() === g.toLowerCase()
