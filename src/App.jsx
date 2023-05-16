@@ -88,12 +88,48 @@ function App() {
     setMovies(favorites);
   };
 
+  /* Filtrar por búsqueda */
+  const handleSearch = (year, genre, director) => {
+    let filteredMovies = copy;
+    if (year) {
+      filteredMovies = filteredMovies.filter((m) => m.anio === parseInt(year));
+    }
+    if (genre) {
+      filteredMovies = filteredMovies.filter(
+        (m) =>
+          m.genero
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "") ===
+          genre
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+      );
+    }
+    if (director) {
+      filteredMovies = filteredMovies.filter(
+        (m) =>
+          m.director
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "") ===
+          director
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+      );
+    }
+    setMovies(filteredMovies);
+  };
+
   return (
     <div>
       <NavBar
         filterYear={filterYear}
         filterDirector={filterDirector}
         filterGenere={filterGenere}
+        handleSearch={handleSearch}
       />
       <Routes>
         <Route

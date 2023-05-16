@@ -52,7 +52,7 @@ const SearchBar = ({ filterYear, filterDirector, filterGenere }) => {
           onChange={(e) => setAnio(e.target.value)}
         />
         <button className="btn btn-outline-success" type="submit">
-          Search
+          Buscar
         </button>
       </form>
 
@@ -71,7 +71,7 @@ const SearchBar = ({ filterYear, filterDirector, filterGenere }) => {
           onChange={(e) => setDirector(e.target.value)}
         />
         <button className="btn btn-outline-success" type="submit">
-          Search
+          Buscar
         </button>
       </form>
 
@@ -90,7 +90,7 @@ const SearchBar = ({ filterYear, filterDirector, filterGenere }) => {
           onChange={(e) => setGenere(e.target.value)}
         />
         <button className="btn btn-outline-success" type="submit">
-          Género
+          Buscar
         </button>
       </form>
     </div>
